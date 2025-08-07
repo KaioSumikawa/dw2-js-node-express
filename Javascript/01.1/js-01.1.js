@@ -34,3 +34,5 @@ function userMessage(user) {
   // É usado para inserir variáveis dentro de STRINGS (CRASE)
 }
 userMessage(user); // ARGUMENTO
+
+teste
