@@ -1,38 +1,36 @@
-// VARIÁVEIS PODEM SER DECLARADAS DE 3 FORMAS:
-// VAR, LET e CONST
-// VAR: No geral evite o seu uso, pode não ser muito seguro.
-// LET: Utilize quando for necessário reatribuir o valor da variável.
-// CONST: Utilize quando NÃO precisar reatribuir o valor da variável.
+// VARIABLES CAN BE DECLARED IN 3 WAYS:
+// VAR, LET, and CONST
+// VAR: In general, avoid using it; it may not be very safe.
+// LET: Use it when the variable needs to be reassigned.
+// CONST: Use it when the variable does NOT need to be reassigned.
 
-// var nome = "Diego"
-// var nome = "Maria"
-// let cidade = "Registro"
-// let cidade = "Pariquera" // NÃO PODE
-// let endereco
-// endereco = "Rua Tal..."
-// const idade // NÃO PODE
-// const idade = 18
-// idade = 20 // NÃO PODE
+// var name = "Diego"
+// var name = "Maria"
+// let city = "Registro"
+// let city = "Pariquera" // NOT ALLOWED
+// let address
+// address = "Some Street..."
+// const age // NOT ALLOWED
+// const age = 18
+// age = 20 // NOT ALLOWED
 
-// TIPOS DE FUNÇÕES
-// FUNÇÃO SIMPLES
-const message = "<h2>Olá! Bem-vindo! Essa é sua primeira função!</h2>";
+// TYPES OF FUNCTIONS
+// SIMPLE FUNCTION
+const message = "<h2>Hello! Welcome! This is your first function!</h2>";
 
 function showMessage() {
   document.write(message);
 }
-// Invocando a função
+// Calling the function
 showMessage();
 
-// FUNÇÃO COM PARÂMETROS
+// FUNCTION WITH PARAMETERS
 const user = "Diego Max";
 
 function userMessage(user) {
-  // Essa função recebe um parâmetro
-  document.write(`<h3>O que deseja fazer hoje, ${user} ?<h3>`);
+  // This function receives a parameter
+  document.write(`<h3>What would you like to do today, ${user} ?</h3>`);
   // ${} -> Template Strings / Literal Strings
-  // É usado para inserir variáveis dentro de STRINGS (CRASE)
+  // Used to insert variables inside STRINGS (BACKTICKS)
 }
-userMessage(user); // ARGUMENTO
-
-teste
+userMessage(user); // ARGUMENT
