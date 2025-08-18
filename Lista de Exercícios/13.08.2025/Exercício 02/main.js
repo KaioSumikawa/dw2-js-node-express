@@ -19,8 +19,11 @@ function operacaoMatematica(num1, operador, num2) {
         return;
     }
 
-    document.write("O resultado de " + num1 + " " + operador + " " + num2 + " é igual a " + resultado + ".");
+    document.write("O resultado de " + num1 + " " + operador + " " + num2 + " é igual a " + resultado + ".<br>");
 }
 
 // Teste
 operacaoMatematica(10, '+', 5);
+operacaoMatematica(10, '-', 5);
+operacaoMatematica(10, '*', 5);
+operacaoMatematica(10, '/', 5);
