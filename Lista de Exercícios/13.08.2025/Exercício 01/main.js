@@ -1,4 +1,8 @@
 const user = "Diego Max";
-function saudacaoPersonalizada() {
-  document.write(Olá, [Nome do Usuário]! Bem-vindo(a) à Calculadora Universal!);
+
+function saudacaoPersonalizada(nome) {
+  document.write("Olá, " + nome + "Bem-vindo(a) à Calculadora Universal!");
 }
+
+saudacaoPersonalizada(user);
+
