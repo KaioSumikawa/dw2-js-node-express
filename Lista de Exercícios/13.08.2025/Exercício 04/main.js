@@ -1,7 +1,8 @@
 const calcularMetade = (numero) => numero / 2;
+
 document.write('<h3>Resultados:</h3>');
 
-let numero1= 10;
+let numero1 = 10;
 let resultado1 = calcularMetade(numero1);
 document.write(`<p>A metade de ${numero1} é: ${resultado1}</p>`);
 
