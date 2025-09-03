@@ -54,4 +54,3 @@ function aplicarMascaraCPF() {
         }
     }
 }
-teste
