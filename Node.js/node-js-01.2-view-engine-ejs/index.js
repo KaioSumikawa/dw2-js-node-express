@@ -9,9 +9,7 @@ app.set('view engine', 'ejs')
 // Criando a primeira rota do site (ROTA PRINCIPAL)
 // REQ = Trata a REQUISIÇÃO / RES = Trata a RESPOSTA
 app.get("/", (req, res) => {
-  res.send(
-    "<h1>Hello world! Bem vindo ao meu primeiro site com Node.js e Express! =)</h1>"
-  );
+   res.render("index")
 });
 
 // Rota DE PRODUTOS
