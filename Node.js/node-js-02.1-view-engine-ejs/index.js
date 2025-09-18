@@ -14,12 +14,46 @@ app.get("/", (req, res) => {
 
 // Rota DE PRODUTOS
 app.get("/produtos", (req, res) => {
-  res.send("<h1>Bem-vindo a página de Produtos!</h1>");
+  // const produtos = ['Computador', 'Celular', 'Tablet', 'Notebook'];
+
+  // Array de objetos com os produtos
+  const produtos = [
+    {nome: "Celular", preco: 3000},
+    {nome: "Computador", preco: 4000},
+    {nome: "Tablet", preco: 2000},
+    {nome: "Notebook", preco: 3800},
+  ];
+
+  res.render("produtos", {
+    produtos : produtos,
+  });
 });
 
 // ROTA DE CLIENTES
 app.get("/clientes", (req, res) => {
-    res.send("<h1>Bem-vindo a página de Clientes!</h1>")
+  const clientes =[
+    {nome: "Ricardo", cpf:"123.456.789-00", endereco:
+      "Rua das Flores, 34" },
+    {nome: "Isaac", cpf:"123.456.789-00", endereco:
+      "Rua Diamante, 100" },
+    {nome: "Ana Flávia", cpf:"123.456.789-00", endereco:
+      "Rua Ceará, 30" },
+    {nome: "Renan", cpf:"123.456.789-00", endereco:
+      "Rua Curitiba, 22" },
+  ];
+    res.render("clientes", {
+      clientes : clientes
+    })
+});
+
+// ROTA DE PERFIL
+app.get("/perfil", (req, res) => {
+  // Criando a variável que será enviada para a página
+  const user = "Diego Max"
+  res.render("perfil", {
+    // Enviando variáveis para a página EJS (HTML)
+    user : user
+  });
 });
 
 // Iniciando o Servidor HTTP
