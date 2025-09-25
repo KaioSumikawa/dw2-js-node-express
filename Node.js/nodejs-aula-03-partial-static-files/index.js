@@ -5,6 +5,8 @@ const app = express();
 
 // CONFIGURANDO O EJS
 app.set('view engine', 'ejs')
+// Definindo a pasta PUBLIC para Arquivos Estáticos
+app.use(express.static("public"));
 
 // Criando a primeira rota do site (ROTA PRINCIPAL)
 // REQ = Trata a REQUISIÇÃO / RES = Trata a RESPOSTA
