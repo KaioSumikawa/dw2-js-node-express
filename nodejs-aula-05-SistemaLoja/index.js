@@ -1,5 +1,9 @@
 // Importando o Express com ES6 Modules
 import express from "express";
+// Importando o Sequelize (arquivo de conexão)
+import connection from "./config/sequelize-config.js";
+// Importando o Model
+import Cliente from "./models/Cliente.js";
 // Iniciando o Express na variável app
 const app = express();
 // Importando os Controllers (onde estão as rotas)
@@ -15,6 +19,21 @@ app.use(express.static("public"));
 app.use("/", ClientesController);
 app.use("/", ProdutosController);
 app.use("/", PedidosController);
+
+// Realizando a conexão com o banco de dados
+// then() e catch() estão tratando a resolução da promessa
+connection.authenticate().then(() => {
+  console.log("Conexão com o banco de dados realizada com sucesso!")
+}).catch(error => {
+  console.log(error);
+});
+
+// Criando o banco de dados (se ele ainda não existir)
+connection.query(`CREATE DATABASE IF NOT EXISTS nossaloja;`).then(() => {
+  console.log("O banco de dados está criado.")
+}).catch((error) => {
+  console.log(error);
+});
 
 // ROTA PRINCIPAL
 app.get("/", function (req, res) {
