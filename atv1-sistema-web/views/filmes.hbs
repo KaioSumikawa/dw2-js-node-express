@@ -1,0 +1,23 @@
+<h1>{{tituloPagina}}</h1>
+
+<table class="table table-striped table-hover table-dark">
+    <thead>
+        <tr>
+            <th>Capa</th> <th>Título</th>
+            <th>Ano</th>
+            <th>Gênero</th>
+            <th>Duração</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each itens}}
+        <tr>
+            <td><img src="/img/{{this.capa}}" alt="Capa de {{this.titulo}}" class="item-capa"></td>
+            <td>{{this.titulo}}</td>
+            <td>{{this.ano}}</td>
+            <td>{{this.genero}}</td>
+            <td>{{this.duracao}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
