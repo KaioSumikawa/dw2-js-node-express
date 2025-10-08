@@ -51,4 +51,16 @@ router.get("/clientes/delete/:id", (req, res) => {
   });
 });
 
+// ROTA DE EDIÇÃO DE CLIENTE
+router.get("/clientes/edit/:id", (req, res) => {
+  const id = req.params.id
+  // Buscando o cliente pela ID
+  // findByPk() -> busca um registro pela chave primária (id)
+  Cliente.findByPk(id).then(cliente => {
+    res.render("clienteEdit", {
+      cliente : cliente
+    });
+  });
+});
+
 export default router;
