@@ -35,5 +35,20 @@ router.post("/clientes/new", (req, res) => {
   });
 });
 
+// ROTA DE EXCLUSÃO DE CLIENTE
+// :id é um parâmetro obrigatório
+router.get("/clientes/delete/:id", (req, res) => {
+  const id =req.params.id
+  // .destroy() -> excluir um registro do banco
+  Cliente.destroy({
+    where: {
+      id: id,
+    },
+  }).then(() => {
+    res.redirect("/clientes")
+  }).catch(error => {
+    console.log(error)
+  });
+});
 
 export default router;
