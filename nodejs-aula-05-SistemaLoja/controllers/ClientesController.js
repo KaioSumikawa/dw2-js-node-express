@@ -14,3 +14,4 @@ router.get("/clientes", function (req, res) {
 });
 
 export default router;
+teste
