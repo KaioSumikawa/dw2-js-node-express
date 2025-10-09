@@ -7,8 +7,8 @@
             </div>
             <div class="card-body">
     <!-- Formulário de edição -->
-    <form action="/clientes/update/<%= cliente.id %>" method="POST">
-        
+    <form action="/clientes/update" method="POST">
+
         <input type="hidden" name="id" value="<%= cliente.id %>">
         <div class="mb-3">
             <label>Nome do cliente:</label>
