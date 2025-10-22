@@ -15,6 +15,20 @@
                         <label>Valor do pedido:</label>
                         <input type="number" name="valor" placeholder="Insira o valor do pedido"
                             class="form-control" required>
+
+                        <label>Cliente:</label>
+
+                        <!-- SELECT com Clientes cadastrados-->
+                         <select name="clienteId" class="form-control" required>
+                            <option value="" selected disabled>Selecione um cliente</option>
+
+                            <% clientes.forEach(cliente => { %>
+                                <option value="<%= cliente.id%>">
+                                    <%¨= cliente.nome %>
+                                </option>
+                            <% }) %>
+                         </select>
+
                         <br>
                         <input type="submit" class="btn btn-success" value="Cadastrar">
                         <button type="reset" class="btn btn-secondary ml-2">Limpar</button>
@@ -36,6 +50,7 @@
                             <tr>
                                 <th>Número:</th>
                                 <th>Valor:</th>
+                                <th>Cliente:</th>
                                 <th style="text-align: center;">Ações:</th>
                             </tr>
                         </thead>
@@ -49,6 +64,10 @@
                                         <%= pedido.valor.toLocaleString('pt-br', { style: "currency" , currency: "BRL"
                                             }) %>
                                     </td>
+                                    <td>
+                                        <%= pedido.cliente.nome %>
+                                    </td>
+
                                     <td class="text-center" style="max-width: 60px;">
                                         <a onclick="return confirm('Deseja mesmo excluir o pedido de número <%= pedido.numero %>?')" href="/pedidos/delete/<%= pedido.id %>">
                                             <button class="btn btn-danger">Excluir</button>

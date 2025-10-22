@@ -16,6 +16,6 @@ const Cliente = connection.define("clientes", {
   },
 });
 
-Cliente.sync({ force: false });
+// Cliente.sync({ force: false });
 
 export default Cliente;

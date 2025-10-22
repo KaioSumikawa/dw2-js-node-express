@@ -9,9 +9,13 @@ const Pedido = connection.define("pedidos", {
   valor: {
     type: Sequelize.FLOAT,
     allowNull: false,
-  }
+  },
+  cliente_id: {
+    type: Sequelize.INTEGER,
+    allowNull: false,
+  },
 });
 
-Pedido.sync({ force: false });
+//Pedido.sync({ force: false });
 
 export default Pedido;
