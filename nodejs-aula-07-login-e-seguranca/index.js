@@ -3,6 +3,9 @@ import express from "express"
 // Iniciando o Express
 const app = express() 
 
+// Importando o Middleware de Autenticação
+import Auth from "./middleware/Auth.js"
+
 // Importando o Express Session (gerador de sessões)
 import session from "express-session"
 
@@ -69,7 +72,7 @@ app.use("/", ProdutosController)
 app.use("/", UsersController)
 
 // ROTA PRINCIPAL
-app.get("/", function(req,res){
+app.get("/", Auth, function(req,res){
     res.render("index")
 })
 
