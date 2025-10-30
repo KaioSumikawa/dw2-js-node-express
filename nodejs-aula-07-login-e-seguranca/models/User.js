@@ -1,5 +1,5 @@
 import Sequelize from "sequelize";
-import connection from "../config/sequelize-config";
+import connection from "../config/sequelize-config.js"; // <--- CORREÇÃO APLICADA AQUI
 
 const User = connection.define('users', {
     email: {
@@ -11,5 +11,6 @@ const User = connection.define('users', {
         allowNull: false,
     },
 });
+
 User.sync({force: false})
 export default User;
